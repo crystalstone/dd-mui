@@ -1,0 +1,45 @@
+
+.dd-mui-checkbox {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    &:hover  {
+        span {
+            border-color: #ff7733;
+        }
+    }
+
+    span {
+        display: block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        cursor: pointer;
+    }
+
+    label {
+        margin-left: 25px;
+    }
+}
+.dd-mui-checkbox.dd-mui-checkbox-disabled {
+
+    &:hover {
+        span {
+            cursor: not-allowed;
+            border-color: #ccc;
+        }
+    }
+}
+
+.dd-mui-checkbox.dd-mui-checkbox-checked {
+    span {
+        border-color: #ff7733;
+        background: data-uri("../../img/checked.png") center center no-repeat;
+    }
+}

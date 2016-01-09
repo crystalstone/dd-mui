@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>checkbox</title>
+    <script src="loader/require.js"></script>
+    <script src="loader/zepto.min.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '../src',
+            'paths': {
+                //'etpl': '../node_modules/etpl/src/main',
+                //'text': '../node_modules/text/text'
+            },
+            'packages': [
+                {
+                    name: 'less',
+                    location: '../demo/loader/require-less',
+                    main: 'less'
+                }
+            ]
+        });
+    </script>
+</head>
+<body>
+<!--手动初始化的例子-->
+<div id="test"></div>
+
+
+<!--自动初始化的例子-->
+<div ui-type="checkbox"
+     ui-property-state="checked"
+     ui-property-labelText="test2"></div>
+
+<div ui-type="checkbox"
+     ui-property-state="disabled"
+     ui-property-labelText="test3"></div>
+
+<div ui-type="checkbox"></div>
+
+<script>
+    window.onload = function () {
+        require(['widget/checkbox/index', 'common/autoInit'], function
+                (Checkbox) {
+            // 单独的初始化
+            new Checkbox('#test', {
+                state: '', // checked disabled
+                labelText: '123123'
+            });
+
+            // 根据标签，自动初始化的例子
+            $.autoInitDDui([Checkbox]);
+        });
+    };
+</script>
+</body>
+</html>
