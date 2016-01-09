@@ -40,8 +40,10 @@
 
 <script>
     window.onload = function () {
-        require(['widget/checkbox/index', 'common/autoInit'], function
+        // 再真正使用时，不需要require'less!widget/checkbox/checkbox'，less理论上，会编译成css的
+        require(['widget/checkbox/index', 'common/autoInit', 'less!widget/checkbox/checkbox'], function
                 (Checkbox) {
+
             // 单独的初始化
             new Checkbox('#test', {
                 state: '', // checked disabled

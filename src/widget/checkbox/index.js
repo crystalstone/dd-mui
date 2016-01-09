@@ -5,9 +5,6 @@
 define(
     function (require) {
 
-        // TODO: 去掉
-        require('less!./checkbox');
-
         var lib = require('../../common/lib');
         var Control = require('../../common/control');
 
