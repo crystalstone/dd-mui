@@ -54,6 +54,8 @@ define(
                     }
                 }
                 this.option = $.extend(true, {}, this.defaultOptions, uiPorp, options);
+
+                this.afterProcessOptions && this.afterProcessOptions();
             },
 
             /**

@@ -59,7 +59,14 @@ define(
             this.main.on('click', function (e) {
                 me.toggleStale();
             });
+        }
 
+        /**
+         * 初始化option后，特殊的处理
+         */
+        SwitchButton.prototype.afterProcessOptions = function () {
+            // TODO : 不太好
+            this.option.switchitems = eval(this.option.switchitems);
         }
 
         /**
