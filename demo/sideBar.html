@@ -33,15 +33,17 @@
 
     <div class="page">
         <div>
+            注意，在使用侧边栏时候，必须配合.page  使用；
+            .page 容器内的，表示当前页
+
             <a open-sidebar="test1">打开左边侧栏</a>
             <a open-sidebar="test2">打开右边边侧栏</a>
             <a open-sidebar="test3">打开下边侧栏</a>
         </div>
     </div>
+
     <div id="test1">
-
         左边的侧栏
-
         <a close-sidebar="test1">关闭sidebar  test1</a>
     </div>
 
@@ -50,9 +52,7 @@
          ui-property-slideOrientation = 'right'
             >
         右边的侧栏
-
         <a close-sidebar="test2">关闭sidebar  test2</a>
-
     </div>
 
     <div ui-type="sidebar" id="test3"
@@ -60,9 +60,7 @@
          ui-property-slideOrientation = 'bottom'
             >
         下边的侧栏
-
         <a close-sidebar="test3">关闭sidebar  test3</a>
-
     </div>
     <script>
         window.onload = function () {
