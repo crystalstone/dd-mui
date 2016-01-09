@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>checkbox</title>
+    <script src="loader/require.js"></script>
+    <script src="loader/zepto.min.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '../src',
+            'paths': {
+                //'etpl': '../node_modules/etpl/src/main',
+                //'text': '../node_modules/text/text'
+            },
+            'packages': [
+                {
+                    name: 'less',
+                    location: '../demo/loader/require-less',
+                    main: 'less'
+                }
+            ]
+        });
+    </script>
+</head>
+<body>
+<!--手动初始化的例子-->
+<div id="test"></div>
+
+
+<!--自动初始化的例子-->
+<div ui-type="switchbutton"></div>
+
+<div ui-type="switchbutton"></div>
+
+<div ui-type="switchbutton"></div>
+
+<script>
+    window.onload = function () {
+        // 再真正使用时，不需要require'less!widget/checkbox/checkbox'，less理论上，会编译成css的
+        require(['widget/switchButton/index', 'common/autoInit',
+            'less!widget/switchButton/switchButton'], function
+                (SwitchButton) {
+
+            // 单独的初始化
+            new SwitchButton('#test', {
+                switchitems: [
+                    {
+                        text: '女生',
+                        value: 1
+                    },
+                    {
+                        text: '男生',
+                        value: 2
+                    }
+                ],
+            });
+
+            // 根据标签，自动初始化的例子
+            $.autoInitDDui([SwitchButton]);
+        });
+    };
+</script>
+</body>
+</html>
