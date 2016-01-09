@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="loader/require.js"></script>
+    <script src="loader/zepto.min.js"></script>
+    <script>
+        require.config({
+            'baseUrl': '../src',
+            'paths': {
+                //'etpl': '../node_modules/etpl/src/main',
+                //'text': '../node_modules/text/text'
+            },
+            'packages': [
+                {
+                    name: 'less',
+                    location: '../demo/loader/require-less',
+                    main: 'less'
+                }
+            ]
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="page">
+        <div>
+            <a open-sidebar="test1">打开左边侧栏</a>
+            <a open-sidebar="test2">打开右边边侧栏</a>
+            <a open-sidebar="test3">打开下边侧栏</a>
+        </div>
+    </div>
+    <div id="test1">
+
+        左边的侧栏
+
+        <a close-sidebar="test1">关闭sidebar  test1</a>
+    </div>
+
+    <div ui-type="sidebar" id="test2"
+         ui-property-autoSlideOpen = "true"
+         ui-property-slideOrientation = 'right'
+            >
+        右边的侧栏
+
+        <a close-sidebar="test2">关闭sidebar  test2</a>
+
+    </div>
+
+    <div ui-type="sidebar" id="test3"
+         ui-property-autoSlideOpen = "true"
+         ui-property-slideOrientation = 'bottom'
+            >
+        下边的侧栏
+
+        <a close-sidebar="test3">关闭sidebar  test3</a>
+
+    </div>
+    <script>
+        window.onload = function () {
+            // 再真正使用时，不需要require'less!widget/checkbox/checkbox'，less理论上，会编译成css的
+            require(['widget/sideBar/index', 'common/autoInit', 'less!widget/sideBar/sideBar'], function
+                    (SideBar) {
+
+                // 单独的初始化
+                new SideBar('#test1', {
+                    autoSlideOpen: true,
+                    slideOrientation: 'left'
+                });
+
+                // 根据标签，自动初始化的例子
+                $.autoInitDDui([SideBar]);
+            });
+        };
+    </script>
+</body>
+</html>
