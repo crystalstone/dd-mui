@@ -1,11 +1,13 @@
 /**
- * @file: checkbox 侧边栏
+ * @file: checkbox
  */
 
 define(
     function (require) {
 
-        require('less!./style');
+        // TODO: 去掉
+        require('less!./checkbox');
+
         var lib = require('common/lib');
         var Control = require('common/control');
 
@@ -16,7 +18,7 @@ define(
         }
 
         /**
-         * 侧边栏，主类
+         * checkbox 主类
          * @param {HtmlElement} target 对象
          */
 
@@ -24,14 +26,16 @@ define(
             Control.call(this, target, options);
         }
 
-        Checkbox.prototype.type = 'checkbox';
+        Checkbox.prototype.type = 'checkbox'; // 组件类型
+
+        // 组件默认的option 一般是肯定存在的
         Checkbox.prototype.defaultOptions = {
             state: 'default', // checked disabled
             labelText: ''
         };
 
         /**
-         * 打开panel
+         * 渲染内部结构, 当主元素没有html的时候，才会走到该函数
          */
         Checkbox.prototype.render = function () {
             var className = this.option.state || STATE.DEFAULT;

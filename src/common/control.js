@@ -91,7 +91,8 @@ define(
             },
 
             dispose: function () {
-
+                // todo
+                this.main.trigger('dispose');
             }
         };
 

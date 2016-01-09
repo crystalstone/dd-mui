@@ -1,12 +1,14 @@
+@import "../../less/skin";
 
 .dd-mui-checkbox {
     position: relative;
     display: inline-block;
     height: 20px;
     line-height: 20px;
+
     &:hover  {
         span {
-            border-color: #ff7733;
+            border-color: @checkbox-border-default-hover;
         }
     }
 
@@ -14,7 +16,7 @@
         display: block;
         width: 18px;
         height: 18px;
-        border: 1px solid #cccccc;
+        border: 1px solid @checkbox-border-default;
         border-radius: 2px;
         position: absolute;
         left: 0;
@@ -32,14 +34,19 @@
     &:hover {
         span {
             cursor: not-allowed;
-            border-color: #ccc;
+            border-color: @checkbox-border-disabled-hover;
         }
+    }
+
+    span {
+        border: 1px solid @checkbox-border-disabled;
     }
 }
 
 .dd-mui-checkbox.dd-mui-checkbox-checked {
     span {
-        border-color: #ff7733;
+        border-color: @checkbox-border-checked;
+        // TODO : 用icon
         background: data-uri("../../img/checked.png") center center no-repeat;
     }
 }
