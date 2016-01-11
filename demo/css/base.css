@@ -1,0 +1,9 @@
+
+.page {
+    position: relative;
+    width: 414px;
+    height: 736px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}

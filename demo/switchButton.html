@@ -2,7 +2,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>checkbox</title>
+    <title>switchbutton</title>
+    <link rel="stylesheet" href="css/base.css">
     <script src="loader/require.js"></script>
     <script src="loader/zepto.min.js"></script>
     <script>
@@ -23,20 +24,22 @@
     </script>
 </head>
 <body>
-<!--手动初始化的例子-->
-<div id="test"></div>
+    <div class="page">
+        <!--手动初始化的例子-->
+        <div id="test"></div>
 
 
-<!--自动初始化的例子-->
-<div ui-type="switchbutton"
-     ui-property-switchitems="[{text: '你猜', value: 0}, {text: '诶亚', value: 1}]"
-     ui-property-switchitems=1 ></div>
+        <!--自动初始化的例子-->
+        <div ui-type="switchbutton"
+             ui-property-switchitems="[{text: '你猜', value: 0}, {text: '诶亚', value: 1}]"
+             ui-property-switchitems=1 ></div>
 
-<div ui-type="switchbutton"
-     ui-property-switchitems="[{text: 'hello', value: 0}, {text: '诶亚', value: 1}]"
-     ui-property-switchitems=0></div>
+        <div ui-type="switchbutton"
+             ui-property-switchitems="[{text: 'hello', value: 0}, {text: '诶亚', value: 1}]"
+             ui-property-switchitems=0></div>
 
-<div ui-type="switchbutton"></div>
+        <div ui-type="switchbutton"></div>
+    </div>
 
 <script>
     window.onload = function () {

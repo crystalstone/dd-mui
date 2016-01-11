@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }

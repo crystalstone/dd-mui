@@ -42,13 +42,13 @@
     }
 }
 body {
-    .page {
+    .current-page {
         transform: translate3d(0, 0, 0);
         transition: transform @panelsDuration;
     }
 }
 body.dd-mui-sidebar-left {
-    .page {
+    .current-page {
         transform: translate3d(@panelWidth, 0, 0);
     }
 
@@ -58,7 +58,7 @@ body.dd-mui-sidebar-left {
 }
 
 body.dd-mui-sidebar-right {
-    .page {
+    .current-page {
         transform: translate3d(-@panelWidth, 0, 0);
     }
 
@@ -68,7 +68,7 @@ body.dd-mui-sidebar-right {
 }
 
 body.dd-mui-sidebar-bottom {
-    .page {
+    .current-page {
         transform: translate3d(0, -@panelHeight, 0);
     }
 
