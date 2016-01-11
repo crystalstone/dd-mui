@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>dd-mui</title>
+    <style>
+        iframe {
+            float: left;
+            width: 88%;
+            height: 100%;
+            min-height: 800px;
+            border: none;
+        }
+        .menu {
+            float: left;
+            width: 10%;
+            padding-top: 12px;
+        }
+
+        .menu div {
+            cursor: pointer;
+            padding: 5px 25px 15px;
+        }
+    </style>
+    <script src="loader/zepto.min.js"></script>
+</head>
+<body>
+<div class="menu">
+    <div href="checkbox.html">复选框</div>
+    <div href="scrollFresh.html">滚动刷新</div>
+    <div href="sideBar.html">侧栏(抽屉)</div>
+    <div href="switchButton.html">开关按钮</div>
+</div>
+<iframe src="checkbox.html"></iframe>
+<script>
+    $(document).ready(function() {
+        $('.menu div').on('click', function(e) {
+            var url = $(e.target).attr('href');
+            $('iframe').attr('src', url);
+        });
+    });
+</script>
+</body>
+</html>
